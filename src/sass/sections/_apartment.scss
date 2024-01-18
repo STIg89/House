@@ -1,0 +1,184 @@
+
+.apartments { 
+    display: none;
+
+    @include tablet {
+        display: block;
+        padding-top: 130px;
+        padding-bottom: 130px;
+      }
+}
+.apartments__title {
+    @include font($fw: 700, $fs: 17, $lh: 21);
+    text-transform: uppercase;
+    text-align: center;
+    @include tablet { 
+        @include font($fw: 700, $fs: 30, $lh: 40);   
+    }
+    @include laptop { 
+        @include font($fw: 700, $fs: 36, $lh: 40); 
+    }
+
+}
+.apartments__after-title {
+    margin-top: 30px;
+    @include font($fw: 500, $fs: 14, $lh: 21);
+    text-transform: capitalize;
+    text-align: center;
+    letter-spacing: 0.035em;
+    @include tablet { 
+        @include font($fw: 500, $fs: 16, $lh: 25);   
+    }
+}
+.apartments__number-list {
+    margin-top: 30px;
+    @include flex;
+    gap: 10px; 
+    @include tablet { 
+        gap: 50px; 
+    }
+}
+
+.apartments__number-item {
+}
+.apartments__number-text {
+    padding: 5px;
+    cursor: pointer;
+    @include font($fw: 500, $fs: 11, $lh: 30);
+    color: var(--black-text-color);
+    @include tablet { 
+        @include font($fw: 500, $fs: 20, $lh: 30);  
+    }
+
+}
+
+html.light .apartments__number-text {
+    color: var(--black-text-color);
+}
+
+html.dark .apartments__number-text {
+     color: var(--white-text-color);
+
+}
+
+html.light .apartments__number-text--active { 
+    color: var(--light-accent-color);
+    border-bottom: 1px solid var(--light-accent-color);
+}
+
+html.dark .apartments__number-text--active { 
+    color: var(--dark-accent-color);
+    border-bottom: 1px solid var(--dark-accent-color);
+}
+.apartments__list {
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    @include tablet { 
+        gap: 30px;
+        margin-top: 45px;
+    }
+    @include laptop { 
+        gap: 50px;  
+        margin-top: 50px;
+    }
+}
+.apartments__item {
+    @include flex; 
+    flex-direction: column;
+    width: calc((100% - 20px) / 3); 
+    background: rgba(0, 90, 141, 0.2);
+    padding: 20px 8px 9px;
+    @media screen and (min-width: 450px) {
+        padding: 25px 20px;
+      }
+    @include tablet { 
+        padding: 33px 25px;  
+        @include font($fw: 500, $fs: 14, $lh: 17); 
+    }
+    @include laptop { 
+        padding: 47px 48px 60px;   
+        @include font($fw: 500, $fs: 14, $lh: 17);  
+    }
+}
+html.dark .apartments__item { 
+    background: rgba(190, 190, 190, 0.10);
+}
+
+html.light .apartments__item { 
+    background: rgba(0, 90, 141, 0.2);
+}
+.apartments__img-wr { 
+    width: 100%;
+    margin-bottom: 13px;
+    @include tablet { 
+        width: 180px;
+    }
+    @include laptop { 
+        width: 314px;
+    }
+}
+
+.apartments__meter {    
+    @include font($fw: 500, $fs: 14, $lh: 17); 
+    text-align: center;
+    text-transform: capitalize;
+    letter-spacing: 0.035em;
+    @include tablet { 
+        font-size: 18px;
+    }
+    @include laptop { 
+        font-size: 24px;
+    }
+}
+.apartments__text {
+    @include font($fw: 500, $fs: 10, $lh: 17); 
+    text-align: center;
+    text-transform: capitalize;
+    @media screen and (min-width: 412px) {
+        @include font($fw: 500, $fs: 14, $lh: 17); 
+      }
+    @include laptop {  
+        @include font($fw: 500, $fs: 18, $lh: 30);  
+    }
+}
+
+.apartments__icon {
+    fill: var(--dark-accent-color);
+    margin-bottom: 10px;
+    width: 25px;
+    height: 25px;
+    @include tablet { 
+        width: 75px;
+        height: 75px;
+        margin-bottom: 15px;
+    }
+    @include laptop { 
+        width: 130px;
+        height: 130px;
+    }
+} 
+html.dark .apartments__icon {
+    fill: var(--dark-accent-color);
+
+} 
+html.light .apartments__icon {
+    fill: var(--light-accent-color);
+
+}
+.apartments__btn { 
+    height: 55px;
+    display: block;
+    margin-top: 34px;
+    margin-left: auto;
+    margin-right: auto;
+    @include tablet { 
+        margin-top: 45px;
+    }
+    @include laptop {  
+        margin-top: 50px;
+        width: 270px;
+    }
+}

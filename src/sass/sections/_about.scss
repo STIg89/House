@@ -1,0 +1,43 @@
+.about { 
+
+    &__content { 
+        @include flex; 
+        flex-direction: column-reverse;
+        justify-content: space-between;
+        @include tablet { 
+            flex-direction: row;
+            margin-top: 42px;
+        }
+        @include desktop { 
+            margin-top: 70px;
+        }
+        
+    }
+    &__text-content { 
+        max-width: 100%;
+        margin-top: 40px;
+        @include tablet { 
+            max-width: 46%;
+        }
+        @include desktop { 
+            max-width: 40%;
+        }
+    }
+    &__img { 
+        margin-top: 40px;
+    }
+    &__section-title { 
+        
+    }
+    &__text { 
+        @include font ($fw: 500, $fs: 14, $lh: 21);
+        @include laptop { 
+            @include font ($fw: 500, $fs: 18, $lh: 32);
+        }
+    }
+    &__text--first { 
+        margin-bottom: 10px;
+        margin-top: 30px;
+    }
+}
+

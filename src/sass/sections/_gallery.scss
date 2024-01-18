@@ -1,0 +1,33 @@
+div.swiper {
+  margin-top: 30px;
+  padding-left: 60px;
+  padding-right: 60px;
+  padding-bottom: 100px;
+  }
+  div.swiper-button-prev::after,
+  div.swiper-button-next::after  {
+    font-size: 25px;
+  }
+
+  html.dark div.swiper-button-prev,
+  html.dark div.swiper-button-next {
+    color: var(--dark-accent-color);
+  }
+
+  html.light div.swiper-button-prev,
+  html.light div.swiper-button-next {
+    color: var(--light-accent-color);
+
+  }
+
+  .swiper-pagination {
+    bottom: 0;
+  }
+  html.dark span.swiper-pagination-bullet {
+    background-color: var(--dark-accent-color);
+  }
+  
+  html.light span.swiper-pagination-bullet {
+    background-color: var(--light-accent-color);
+  }
+  

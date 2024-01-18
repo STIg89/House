@@ -1,0 +1,159 @@
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &__line {
+    width: calc((100% - 240px) / 2);
+    height: 2px;
+    @include tablet {
+      width: calc((100% - 400px) / 2);
+    }
+    @include desktop {
+      width: calc((100% - 580px) / 2);
+    }
+  }
+
+  html.light &__line {
+    background-color: var(--light-accent-color);
+  }
+
+  html.dark &__line {
+    background-color: var(--dark-accent-color);
+  }
+
+  &__wr {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 10px;
+    &::after,
+    &::before {
+      content: '';
+      display: block;
+      width: 19px;
+      height: 3px;
+      @include tablet {
+        width: 100px;
+        height: 10px;
+      }
+      @include desktop {
+        width: 190px;
+        height: 10px;
+      }
+    }
+    html.light &::after,
+    html.light &::before {
+      content: '';
+      background-image: url(../images/title-dots-mob.svg);
+      @include tablet {
+        background-image: url(../images/title-dots-tab.svg);
+      }
+      @include desktop {
+        background-image: url(../images/title-dots-pc.svg);
+      }
+    }
+
+    html.dark &::after,
+    html.dark &::before {
+      content: '';
+      background-image: url(../images/title-dots-mob-y.svg);
+      @include tablet {
+        background-image: url(../images/title-dots-tab-y.svg);
+      }
+      @include desktop {
+        background-image: url(../images/title-dots-pc-y.svg);
+      }
+    }
+  }
+  &__text {
+    @include font($fw: 500, $fs: 17, $lh: 17);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    max-width: 150px;
+    margin-left: 10px;
+    margin-right: 10px;
+    @include tablet {
+      @include font($fw: 500, $fs: 30, $lh: 30);
+      max-width: 250px;
+      gap: 3px;
+    }
+    @include desktop {
+      @include font($fw: 500, $fs: 36, $lh: 36);
+      max-width: 290px;
+    }
+  }
+  &__span {
+    @include font($fw: 900, $fs: 17, $lh: 17);
+    text-transform: uppercase;
+    @include tablet {
+      @include font($fw: 900, $fs: 30, $lh: 30);
+    }
+    @include desktop {
+      @include font($fw: 900, $fs: 36, $lh: 36);
+    }
+  }
+
+  html.light &__span {
+    color: var(--light-accent-color);
+  }
+
+  html.dark &__span {
+    color: var(--dark-accent-color);
+  }
+
+  &__after-span {
+    @include font($fw: 500, $fs: 10, $lh: 15);
+    text-transform: capitalize;
+    @include tablet {
+      @include font($fw: 500, $fs: 14, $lh: 21);
+      letter-spacing: 0.315em;
+    }
+    @include desktop {
+      @include font($fw: 500, $fs: 16, $lh: 24);
+    }
+  }
+}
+
+.section-title {
+  @include font($fw: 700, $fs: 17, $lh: 21);
+  text-transform: uppercase;
+  max-width: 560px;
+  @include tablet {
+    @include font($fw: 700, $fs: 21, $lh: 38);
+  }
+  @include laptop {
+    @include font($fw: 700, $fs: 36, $lh: 54);
+  }
+
+  &__line {
+    width: 190px;
+    height: 2px;
+    margin-left: auto;
+    margin-right: 0;
+    @include tablet {
+      width: 270px;
+      margin-left: 90px;
+    }
+    @include laptop {
+      width: 370px;
+      margin-left: auto; 
+    }
+    &--reverse { 
+      margin-right: auto;
+      margin-left: 0;
+      @include tablet {
+        margin-left: auto;
+      }
+    }
+  }
+
+  html.light &__line {
+    background-color: var(--light-accent-color);
+  }
+
+  html.dark &__line {
+    background-color: var(--dark-accent-color);
+  }
+}

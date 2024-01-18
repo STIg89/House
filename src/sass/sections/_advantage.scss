@@ -1,0 +1,101 @@
+.advantage {
+  &__content {
+    @include flex;
+    flex-direction: column;
+    justify-content: space-between;
+    @include laptop {
+      flex-direction: row;
+    }
+  }
+  &__text-content {
+    max-width: 650px;
+    @include laptop { 
+      max-width: 45%;
+    }
+  }
+  &__section-title {
+    text-align: center;
+    @include laptop {
+      text-align: left;
+    }
+  }
+  &__section-title-wr { 
+    margin-bottom: 30px;
+    width: 100%;
+    @include laptop { 
+      display: none;
+    }
+  }
+  &__section-title-wr--desktop {
+    margin-bottom: 30px;
+    display: none; 
+    @include laptop { 
+      display: block;
+    }
+  }
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    @include tablet {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+    @include laptop {
+      flex-wrap: nowrap;
+      flex-direction: column;
+    }
+  }
+  &__item {
+    position: relative;
+    padding-left: 15px;
+    @include tablet {
+      width: 250px;
+    }
+    @include laptop {
+      width: auto;
+    }
+    html.light &::before {
+      content: '';
+      width: 0px;
+      height: 26px;
+      border: 2px solid var(--light-accent-color);
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+    html.dark &::before {
+      content: '';
+      width: 0px;
+      height: 26px;
+      border: 2px solid var(--dark-accent-color);
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+  }
+  &__title {
+    @include font($fw: 700, $fs: 17, $lh: 21);
+    margin-bottom: 7px;
+    @include laptop {
+      @include font($fw: 700, $fs: 24, $lh: 16);
+      margin-bottom: 15px;
+    }
+  }
+  &__text {
+    @include font($fw: 500, $fs: 14, $lh: 20);
+    @include laptop {
+      @include font($fw: 500, $fs: 16, $lh: 22);
+    }
+  }
+  &__img {
+    margin-bottom: 40px;
+    @include tablet { 
+      margin-bottom: 75px;
+    }
+  }
+}
